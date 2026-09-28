@@ -38,6 +38,15 @@ server/   Express + Mongoose
   src/seed.js         loads films into Mongo
 ```
 
+## Deploy (live on the internet)
+
+Local MongoDB cannot be used in the cloud. You need a free **MongoDB Atlas** cluster, then one **Render** web service that serves both the API and the built React app.
+
+1. Create a free cluster at [mongodb.com/atlas](https://www.mongodb.com/atlas) → Database Access (user + password) → Network Access (`0.0.0.0/0`) → Connect → Drivers → copy the `mongodb+srv://...` URI. Add the database name: `...mongodb.net/noir-cinema-club`.
+2. Open Render’s blueprint for this repo: [Deploy to Render](https://render.com/deploy?repo=https://github.com/Alcodic/noir-cinema-club).
+3. Paste `MONGO_URI` when Render asks. `JWT_SECRET` is generated for you.
+4. After the first deploy, open the Render URL. The vault seeds itself if the database is empty.
+
 ## Mentor notes
 
 - We store the login token in `localStorage`. That is simple for a first app. Production apps usually put tokens in **httpOnly cookies** so JavaScript cannot steal them.
