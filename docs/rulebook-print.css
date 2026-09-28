@@ -1,0 +1,280 @@
+/* Print stylesheet for the Noir Cinema Club rule book. A4, ink-friendly. */
+
+@page {
+  size: A4;
+  margin: 20mm 18mm 22mm 18mm;
+}
+
+html {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+html, body {
+  background: #fff;
+  color: #1c1814;
+}
+
+body {
+  font-family: "Iowan Old Style", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-size: 11pt;
+  line-height: 1.52;
+  max-width: 100%;
+  margin: 0;
+}
+
+p, li {
+  orphans: 3;
+  widows: 3;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ----- Title page ----- */
+
+.titlepage {
+  break-after: page;
+  page-break-after: always;
+  padding: 36mm 4mm 28mm 0;
+  border-top: 3px solid #c9a962;
+}
+
+.pagebreak {
+  break-before: page;
+  page-break-before: always;
+  display: block;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.titlepage .eyebrow {
+  font-family: "Avenir Next", "Avenir", "Gill Sans", "Trebuchet MS", sans-serif;
+  font-size: 9pt;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: #8a6d2f;
+  margin: 0 0 22pt 0;
+}
+
+.titlepage h1 {
+  font-size: 26pt;
+  line-height: 1.14;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0 0 16pt 0;
+  break-before: auto;
+  page-break-before: auto;
+  border: none;
+  color: #14110e;
+}
+
+.titlepage .subtitle {
+  font-size: 14pt;
+  font-style: italic;
+  color: #4a433b;
+  margin: 0 0 28pt 0;
+}
+
+.titlepage .meta {
+  font-family: "Avenir Next", "Avenir", "Gill Sans", "Trebuchet MS", sans-serif;
+  font-size: 9.5pt;
+  color: #5c5348;
+  letter-spacing: 0.04em;
+  margin-top: 8pt;
+}
+
+.titlepage .gold-rule {
+  width: 72pt;
+  height: 1px;
+  background: #c9a962;
+  margin: 22pt 0;
+}
+
+.titlepage .blurb {
+  max-width: 118mm;
+  font-size: 11pt;
+  line-height: 1.55;
+  color: #3a342e;
+}
+
+/* ----- Headings ----- */
+
+h1 {
+  font-size: 16.5pt;
+  line-height: 1.22;
+  font-weight: 600;
+  color: #14110e;
+  margin: 0 0 11pt 0;
+  padding-bottom: 6pt;
+  border-bottom: 1.5px solid #c9a962;
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+h2 {
+  font-size: 12.5pt;
+  font-weight: 600;
+  color: #14110e;
+  margin: 16pt 0 7pt 0;
+  page-break-after: avoid;
+}
+
+h3 {
+  font-size: 11pt;
+  font-weight: 600;
+  color: #2a241e;
+  margin: 13pt 0 5pt 0;
+  page-break-after: avoid;
+}
+
+h1 + p, h2 + p, h3 + p {
+  margin-top: 0;
+}
+
+p {
+  margin: 0 0 8pt 0;
+}
+
+ul, ol {
+  margin: 0 0 10pt 0;
+  padding-left: 18pt;
+}
+
+li {
+  margin-bottom: 3.5pt;
+  break-inside: avoid;
+}
+
+li > ul, li > ol {
+  margin-top: 3pt;
+  margin-bottom: 4pt;
+}
+
+blockquote {
+  margin: 10pt 0 12pt 0;
+  padding: 8pt 12pt;
+  border-left: 3px solid #c9a962;
+  background: #f7f1e8;
+  color: #2a241e;
+  page-break-inside: avoid;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+strong {
+  font-weight: 650;
+}
+
+em {
+  font-style: italic;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #d9d0c3;
+  margin: 16pt 0;
+}
+
+/* ----- Code ----- */
+
+code {
+  font-family: "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 8.3pt;
+  background: #f3eee6;
+  padding: 0.08em 0.28em;
+  border-radius: 2px;
+}
+
+pre {
+  font-family: "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 7.8pt;
+  line-height: 1.38;
+  background: #f4efe6;
+  border: 1px solid #e2d8c8;
+  padding: 9pt 10pt;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  page-break-inside: avoid;
+  margin: 8pt 0 12pt 0;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  font-size: inherit;
+}
+
+/* ----- Tables ----- */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 8.6pt;
+  line-height: 1.38;
+  margin: 8pt 0 14pt 0;
+}
+
+thead {
+  display: table-header-group;
+}
+
+th {
+  background: #1c1814;
+  color: #f4efe6;
+  font-family: "Avenir Next", "Avenir", "Gill Sans", "Trebuchet MS", sans-serif;
+  font-size: 7.6pt;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: left;
+  padding: 5pt 6pt;
+}
+
+td {
+  border-bottom: 1px solid #e2d8c8;
+  padding: 5pt 6pt;
+  vertical-align: top;
+}
+
+tr:nth-child(even) td {
+  background: #faf6f0;
+}
+
+/* ----- Callouts ----- */
+
+.callout {
+  border: 1px solid #c9a962;
+  background: #fbf6ec;
+  padding: 9pt 12pt;
+  margin: 10pt 0 14pt 0;
+  page-break-inside: avoid;
+}
+
+.callout p:last-child {
+  margin-bottom: 0;
+}
+
+.checklist {
+  page-break-inside: avoid;
+}
+
+.checklist li {
+  margin-bottom: 5pt;
+}
+
+/* Keep numbered reading order readable */
+ol.reading-order li {
+  margin-bottom: 5pt;
+}
+
+/* Pandoc title block (unused if we use custom titlepage, but safe) */
+header#title-block-header {
+  display: none;
+}

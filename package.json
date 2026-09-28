@@ -1,0 +1,11 @@
+{
+  "name": "noir-cinema-club",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -n api,web -c gold,white \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "seed": "npm run seed --prefix server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
