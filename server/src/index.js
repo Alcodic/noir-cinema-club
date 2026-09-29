@@ -64,7 +64,7 @@ async function start() {
   await connectDB();
   await seedIfEmpty();
   const port = process.env.PORT || 5001;
-  app.listen(port, () => {
+  app.listen(port, '0.0.0.0', () => {
     console.log(`Noir Cinema Club API listening on ${port}`);
   });
 }
